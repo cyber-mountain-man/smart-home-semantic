@@ -1,19 +1,3 @@
-Yes — creating a solid `README.md` before pushing is highly recommended. It provides context, documentation, and helps you present the project professionally on GitHub.
-
----
-
-## ✅ Benefits of Having a `README.md` Before Pushing
-
-* Acts as the landing page of your project
-* Explains purpose, structure, and tech used
-* Links to your `docs/` for detailed diagrams
-* Shows effort and polish when recruiters or collaborators view the repo
-
----
-
-## 📄 Suggested `README.md` Template
-
-````markdown
 # 🏠 Smart Home Semantic System
 
 This project integrates Semantic Web technologies, IoT device modeling, and SPARQL querying into a cohesive smart home simulation. It is designed to help you learn:
