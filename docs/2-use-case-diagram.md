@@ -28,25 +28,27 @@ This diagram shows the main interactions between users and the system, outlining
 
 ---
 
-## 🧭 Mermaid Diagram
+## 🧭 Use Case Representation with Mermaid
 
 ```mermaid
-actor User
-actor "IoT Device" as Device
-actor "Ontology Engine" as Onto
-actor "SPARQL Interface" as SPARQL
-actor Admin
+graph TD
 
-User --> (View Device Status)
-User --> (Run Semantic Query)
-User --> (Toggle Device)
+HomeUser([Home User])
+IoTDevice(["IoT Device"])
+OntologyEngine(["Ontology Engine"])
+SPARQLInterface(["SPARQL Interface"])
+Admin([Admin])
 
-Device --> (Send Sensor Data)
+HomeUser -->|View| ViewStatus[View Device Status]
+HomeUser -->|Run| RunQuery[Run Semantic Query]
+HomeUser -->|Toggle| ToggleDevice[Toggle Device]
 
-(Send Sensor Data) --> Onto
-(Toggle Device) --> Onto
-(View Device Status) --> SPARQL
-(Run Semantic Query) --> SPARQL
+IoTDevice --> SensorData[Send Sensor Data]
 
-Admin --> (View Logs)
-Admin --> (Edit Ontology)
+SensorData --> UpdateOntology[Update Ontology]
+ToggleDevice --> UpdateOntology
+ViewStatus --> QueryOntology[Query Ontology]
+RunQuery --> QueryOntology
+
+Admin --> ViewLogs[View Logs]
+Admin --> EditOntology[Edit Ontology]
